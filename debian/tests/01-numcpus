@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# atop reports number of CPU and two extra lines
+ATOPSOPINION="$(atop -P cpu 5 1 | wc -l)"
+TRUTH="$(lscpu  | awk '/^CPU\(s\)/{print $2}')"
+
+if [ "$(( TRUTH + 2 ))" -ne "$ATOPSOPINION" ]; then
+  exit 1
+fi
+  exit 0
+fi
+
