@@ -1,0 +1,1235 @@
+commit 115b355cb52eee4b11ce00e5b01decde37796e90
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Wed Jan 5 19:12:27 2022 +0100
+
+    Explicit type definition in atop.service (issue #180)
+
+M	atop.service
+
+commit 9afc5ad3d714ea09f9ffdebd79b345fe223c7e20
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Wed Jan 5 18:54:21 2022 +0100
+
+    Correct disk stats in atopsar (issue #182)
+    A wrong disk report is shown with the -d/-l/-f flags.
+    When the kernel supports the discard counter per disk,
+    output lines are empty in the disk report.
+    When the kernel doesnot support the discard counter per disk,
+    output lines often show a negative value for for the average
+    access time (avserv).
+
+M	atopsar.c
+
+commit ffb30c62ad5a3e7844d3d9004c174af58eb3dc60
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jan 1 14:37:18 2022 +0100
+
+    Add information about service activation to README file
+
+M	README
+
+commit fdf3526bd35c1a84dd11bb73110c1a1f4148e39d
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Fri Dec 31 11:25:13 2021 +0100
+
+    Add directory to .gitignore
+
+M	.gitignore
+
+commit 5dbe750eca1e468694dc4d4d0d251a485f58ad74
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Fri Dec 31 11:25:04 2021 +0100
+
+    Clarify relation between atop/atopacctd in man page
+
+M	man/atop.1
+
+commit 1b4f7d6d2e14e768f310fc6041c05c5dcc69cee7
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Fri Dec 31 11:24:00 2021 +0100
+
+    Added license info
+
+M	atopgpud
+M	netlink.c
+
+commit a67368badc8b639f23268e636a1a3d8787ee90c5
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Fri Dec 31 11:23:18 2021 +0100
+
+    Added generic license info to README #179
+
+M	README
+
+commit c427419d975bd94f452aeabf5df0a5d4a6be241b
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 18 11:24:21 2021 +0100
+
+    Switch to version 2.7
+
+M	version.h
+
+commit 81b71b0791755dc73ba5fafdee6211090c5e0d93
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 18 11:21:12 2021 +0100
+
+    Describe (un)restricted view in first screen
+
+M	man/atop.1
+M	showgeneric.c
+
+commit b027bbaa29bb6403789840a03c8dbf22469c2ed3
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 18 11:17:39 2021 +0100
+
+    Modified behavior of "make install"
+    Run "make install" to install atop on a systemd-based system and
+    run "make sysvinstall" to install atop on a system V based system.
+
+M	Makefile
+M	README
+
+commit b1ada7e250ec910dcf63955e6a7ee91ffe4877c8
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 18 10:46:25 2021 +0100
+
+    Cosmetic change
+
+M	ifprop.c
+
+commit 0efb2365bbefb57a8987ddb3f0da42f8bed1a941
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Fri Dec 17 23:04:12 2021 +0100
+
+    Determine (un)restricted view by verifying suid instead of euid.
+
+M	showgeneric.c
+
+commit 154ca1cd1b0fc5cea5c61fa5c5ebfb7a7a785067
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Dec 16 22:13:24 2021 +0100
+
+    Do not ignore unknown network interface
+
+M	ifprop.c
+
+commit 65832bf7b3c7c35f44e7e0461b33b01f1eff449e
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Dec 16 22:05:18 2021 +0100
+
+    Parseable output: optionally exchange spaces in command and command line
+    When the -Z flag is combined with the -P... flag, the spaces in the
+    command and command line in the parseable output are exchanged by
+    underscores and the parenthesis are suppressed to ease space-based
+    parsing.
+
+M	atop.c
+M	atop.h
+M	man/atop.1
+M	parseable.c
+M	showgeneric.h
+
+commit ab1fbc012bc7e33594ce84c845a2cb43c5edd757
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Dec 14 16:25:20 2021 +0100
+
+    No setuid by default
+
+M	rpmspec/atop.specsystemd
+
+commit da9d8a9885e044897bc6f8445974eebf4e6ab20b
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Dec 13 19:53:53 2021 +0100
+
+    Correct conversion to 2.7 raw files
+
+M	atopconvert.c
+M	deviate.c
+M	photosyst.c
+
+commit b35b9be1233a2d380c0093c645ff4b2e44e38b86
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Dec 13 18:54:40 2021 +0100
+
+    Corrected type
+
+M	man/atop.1
+
+commit c8e755b4bae02258810e996e388ee85d187997d9
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 11 21:46:11 2021 +0100
+
+    Only show per-node NUMA stats when more than 1 node
+
+M	showlinux.c
+
+commit a0b48f8fe4641cc693cd198d3c241f507b2a29c4
+Merge: 070bf58 01cdbfb
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 11 21:41:13 2021 +0100
+
+    Merge branch 'adapt_conversion'
+
+commit 01cdbfba8b4232a97ffc2d29401ac4503a949cec
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 11 21:39:58 2021 +0100
+
+    Prepare man pages for version 2.7
+
+M	man/atop.1
+M	man/atopacctd.8
+M	man/atopcat.1
+M	man/atopconvert.1
+M	man/atopgpud.8
+M	man/atoprc.5
+M	man/atopsar.1
+
+commit 3c3fb8611f85cedbbed1004e1e40bd60cfc99564
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Dec 11 21:39:35 2021 +0100
+
+    Prepare atopconvert for version 2.7
+
+M	atopconvert.c
+A	prev/photoproc_27.h
+A	prev/photosyst_27.h
+
+commit 070bf58021b94d4bc7d03e97c6126f2b5af3a3bc
+Merge: 1a8228c dd13f80
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Dec 2 10:29:45 2021 +0100
+
+    Merge branch 'acctcoop'
+
+commit dd13f80e80e9063e9abaf062b26e4272c9671762
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Dec 2 10:21:52 2021 +0100
+
+    Detect logrotation for process accounting with psacct/acct
+    In case that the psacct/acct package is installed and the service is
+    enabled, atop will read the process accounting records from the
+    logfile related to that package (/var/(log/)account/pacct).
+    Atop notices the rotation of this file now, instead of using the
+    logrotation 'wrappers' psaccs_atop and psaccu_atop that were installed
+    before in the /etc/logrotate.d directory (these wrappers have been
+    removed now).
+
+M	Makefile
+M	README
+M	acctproc.c
+M	man/atop.1
+D	psaccs_atop
+D	psaccu_atop
+M	rpmspec/atop.specsysv
+
+commit 1a8228cb859fb754c3c9db4d08671e9ea7fbc207
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Nov 20 14:53:46 2021 +0100
+
+    Speed and duplex mode not correctly filled for interface
+    In case of handshaked ETHTOOL_GLINKSETTINGS the speed and
+    duplex mode were not correctly filled.
+
+M	ifprop.c
+
+commit 0db2a32deea5135831c0fb74c9b8495c9930a291
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Nov 15 23:58:13 2021 +0100
+
+    Bug solution related to discards
+
+M	photosyst.c
+
+commit c12ff9db0aec03c435c7a32df8b2fc12ad27a3b1
+Merge: 5c08726 06c84b1
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Nov 15 16:54:13 2021 +0100
+
+    Merge branch 'add_discard'
+
+commit 06c84b1649ba3dc0c4603ff16460eddeecb301ee
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Nov 15 16:48:23 2021 +0100
+
+    Support discard counter for disks and skip unused disks
+    When the number of discards is separatedly by the kernel and provided
+    via /proc/diskstats, it will be shows as a separate counter by atop.
+    Furthermore, atop will ignore disks that have not been used at all
+    (#reads, #writes and #discards are all zero) as an alternative for
+    the solution provided by PR #170.
+
+M	atopsar.c
+M	deviate.c
+M	man/atop.1
+M	man/atopsar.1
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit 98ccb68acf64bfe432e049f7665f424fe5aad8fb
+Merge: 5c08726 fd29747
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Nov 9 21:06:39 2021 +0100
+
+    Merge pull request #172 from bytedance/bytedance/fix-ioctl-parameter
+    
+    ifprop.c: fix ioctl parameter after handshaking with kernel
+
+commit fd29747a6539497146f779f5258032ccab154850
+Author: huteng.ht <huteng.ht@bytedance.com>
+Date:   Mon Oct 18 22:50:52 2021 +0800
+
+    ifprop.c: fix ioctl parameter after handshaking with kernel
+    
+    After handshaking with kernel completed, following ioctl syscalls with
+    SIOCETHTOOL request code and a positive value of link_mode_masks_nwords,
+    which indicates number of 32-bit words for the supported, advertising and
+    lp_advertising link mode bitmaps, would return with those three __u32 arrays
+    appended to the end of struct ethtool_link_settings.
+    
+    Accordingly, the ioctl parameter, ifreq, should be initialized with
+    ifreq.ifr_ifru.ifru_data pointing to a extended memory space to accommodate
+    those arrays. Otherwise, unexpected memory corruption would occur.
+
+M	ifprop.c
+
+commit 5c08726ca1fe42513f05a1bc5fd06169226e899d
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Nov 6 12:27:28 2021 +0100
+
+    Show gigabits/sec instead of megabits/sec for Infiniband #131
+
+M	atopsar.c
+
+commit ef00513d29fe7fed09b567f48262a6c4a9c8309b
+Merge: 6d3109f ea332c6
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Nov 6 10:44:58 2021 +0100
+
+    Merge pull request #168 from xixiliguo/mem-busy
+    
+    Correct memory busy logic in atopsar
+
+commit 6d3109f9cf35abff4e73bc7e55506f449c8c1471
+Merge: 0d18f69 2a498f1
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Nov 6 10:39:56 2021 +0100
+
+    Merge pull request #173 from bytedance/execvp-CVE
+    
+    CVE: use execvp with a specified path to avoid PATH hijacking
+
+commit 2a498f1dab5cd710fc228c708ceee8d6974b0ada
+Author: Fei Li <lifei.shirley@bytedance.com>
+Date:   Tue Oct 19 16:08:21 2021 +0800
+
+    CVE: use execvp with a specified path to avoid PATH hijacking
+    
+    With the upgrade of atop, there are cases when we try to use the new
+    atop version to read the incompatible log files generated by the old
+    atop version. The current code uses execvp in try_other_version() to
+    implement this compatibility mechanism.
+    
+    However, the execvp is somehow risky. The following is an example.
+    - Preparation conditions:
+      1. Forge a malicious binary named atop-2.4 under /home/test, and
+         add it to the global $PATH.
+      2. Supposing there's no real /usr/bin/atop-2.4 or other executable
+         atop-2.4 except the malicious /home/test/atop-2.4.
+      3. Forge a malformed /var/log/atop/atop_2.4, which can do harm to
+         current machine if called by the malicious /home/test/atop-2.4.
+      4. Update atop to v2.6.
+    - Reproduce:
+      Use the current v2.6's atop to read /var/log/atop/atop_2.4, the code
+      will finally find out and call the malicious /home/test/atop-2.4
+      (`strace` can show the detail), then trigger the hijacking risk.
+    - Fix:
+      Let's hard-code execvp's first parameter with '/usr/bin/atop' to
+      avoid the PATH hijacking.
+    
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+    Reported-by: yangqiushi.george@bytedance.com
+
+M	rawlog.c
+
+commit ea332c676785f712e5682395e9a425166f1c1846
+Author: peter wang <wangbo.red@gmail.com>
+Date:   Sun Oct 3 22:35:41 2021 +0800
+
+    Correct memory busy logic in atopsar
+
+M	atopsar.c
+
+commit 0d18f694afca1c0268e63f60b5aed7cf95e00aed
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Sep 26 14:23:44 2021 +0200
+
+    Add parseable output for per-node NUMA counters
+
+M	deviate.c
+M	man/atop.1
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit d0b2de66b7f88664b2733f3bba1e9ace5b9b40b8
+Merge: dc71bc4 1fbda3f
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Sep 21 13:28:42 2021 +0200
+
+    Merge branch 'bytedance-add-per-numa-info'
+
+commit 1fbda3f1081a3c2734a215082ff2d4f1870e5898
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Sep 21 13:24:52 2021 +0200
+
+    Additions to NUMA counters
+    Table overflow checks, bug fix and manual page has been added.
+
+M	deviate.c
+M	man/atop.1
+M	photosyst.c
+M	photosyst.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit 437beeb569aeaccc342184833473f9fb886da364
+Author: Fei Li <lifei.shirley@bytedance.com>
+Date:   Sat Aug 7 20:52:28 2021 +0800
+
+    Gather and show per numa cpu related statistics
+    
+    Currently there exists many scenarios of mixed services deployment,
+    like hybrid cloud, and generally different services are running in
+    different numa via cpu-pin technology. At this time, accumulate cpu
+    statistics for per numa is extremely meaningful.
+    
+    By default, the maxnumalines is set to be zero. Specify the
+    maxnumalines interactively if needed.
+    
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+
+M	atop.c
+M	atop.h
+M	deviate.c
+M	photosyst.c
+M	photosyst.h
+M	showgeneric.c
+M	showgeneric.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit 3f5a5e523cd4ae37314c46aa479cf53e17911779
+Author: Fei Li <lifei.shirley@bytedance.com>
+Date:   Fri Jul 16 18:34:33 2021 +0800
+
+    Gather and show per numa memory related statistics
+    
+    Sometimes we need per numa memory related statistics to troubleshoot,
+    let's gather per numa info by reading the
+    /sys/devices/system/node/node$n/meminfo. By default, set maxnumalines
+    to be zero, in case there exists too many NUMA for one machine.
+    
+    Besides, show memory fragmentation level for each numa.
+    
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+
+M	atop.c
+M	atop.h
+M	deviate.c
+M	photosyst.c
+M	photosyst.h
+M	showgeneric.c
+M	showgeneric.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit dc71bc44af8feaf1ebc4b3e350330b2c63b2d891
+Merge: 02a7c5d 14b383a
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Aug 9 13:19:54 2021 +0200
+
+    Merge branch 'interfaces'
+
+commit 14b383a824fad8f0edfb7c52875732fdc2e6196b
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Aug 9 13:11:32 2021 +0200
+
+    Redesign of code to handle network interfaces
+    The old code that handles the properties of network interfaces
+    did not scale properly for a large number of interfaces and
+    contained bugs.
+    The new code regularly gathers information of the network interfaces
+    and stores it in a hash list. Besides, it takes care that stats
+    of physical interfaces take precedence over stats of virtual interfaces
+    in case that the number of interfaces of a system exceeds the maximum
+    supported by atop.
+
+M	deviate.c
+M	ifprop.c
+M	ifprop.h
+M	photosyst.c
+M	photosyst.h
+
+commit 02a7c5ddcf315148350474292755f4468d91372d
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Aug 8 10:11:02 2021 +0200
+
+    Correction in handling of zswap and ksm counters
+
+M	parseable.c
+M	photosyst.c
+M	showlinux.c
+
+commit abc63c396192c60d03acd76e357ac4bce61a349e
+Merge: 8b65a35 842844f
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Aug 8 09:42:54 2021 +0200
+
+    Merge branch 'podman'
+
+commit 842844f299e577f30a9c0d90393c47de81c99a8b
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Aug 8 09:41:52 2021 +0200
+
+    Support containers created by podman
+
+M	photoproc.c
+
+commit 8b65a35be87e7524d39df206c7b63b0f43e74903
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Aug 3 12:36:49 2021 +0200
+
+    Cleanup old messages
+
+M	showprocs.c
+
+commit 334de688127f94774f4ef71b07a7c9f108053f89
+Merge: bbc5733 e3e9994
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Aug 3 11:29:33 2021 +0200
+
+    Merge pull request #154 from ffontaine/master
+    
+    photosyst.c: fix build on musl
+
+commit bbc57336ecbd11a4858d626211415db634fed5e9
+Merge: 28201da ec2b21b
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Aug 3 11:25:52 2021 +0200
+
+    Merge pull request #162 from bytedance/fix-perf
+    
+    Polish do_perfevents when atop built with NOPERFEVENT
+
+commit 28201dabbf443fb5edf0c9033e65d4741cf09162
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Aug 3 11:20:28 2021 +0200
+
+    Do not change owner to root in Makefile (issue #76)
+
+M	Makefile
+
+commit f1edeaa967447fca9b887dafb45e13d1c74d7fc1
+Merge: 0e85cba b5330de
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Aug 3 10:58:39 2021 +0200
+
+    Merge branch 'debaccounting'
+
+commit b5330dee8fbfa24db10bc2fc85f23145e62ca522
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Aug 3 10:55:02 2021 +0200
+
+    Support process accounting log /var/log/account/pacct (issue #138)
+    The Debian acct package logs to the file /var/log/account/pacct
+    for process accounting. This file was not checked by atop when
+    looking for process accounting candidates.
+
+M	acctproc.c
+M	atopacct.init
+M	man/atop.1
+M	psaccs_atop
+M	psaccu_atop
+
+commit ec2b21bbf99447a48aa5380e4d0d3c4fbfb64b72
+Author: Fei Li <lifei.shirley@bytedance.com>
+Date:   Mon Aug 2 22:20:51 2021 +0800
+
+    Polish do_perfevents when atop built with NOPERFEVENT
+    
+    The phenomenon is supposing one atop package whose code is older than
+    commit: 961a6ce13 has been installed and 'perfevents disable' is also
+    defined in atoprc. When trying to update to a version newer than that
+    commit, the new atop will crash saying 'atop built with NOPERFEVENT,
+    cannot use perfevents'. And the result is we have to remove the tag
+    in atoprc before we do update, which is quite inconvenient.
+    
+    Although perf is forbidden when atop is built with NOPERFEVENT,
+    defining 'perfevents disable' in atoprc can actually be allowed. Let's
+    avoid that unfriendly crash by making the check code tolerate with
+    the 'perfevents disable' tag in /etc/atoprc.
+    
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+
+M	photosyst.c
+
+commit 0e85cba6a6e27b80fc8ccde4c38440388895d283
+Merge: c72143f 9fc4536
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Jul 26 09:17:50 2021 +0200
+
+    Merge branch 'showsysclean'
+
+commit 9fc4536d5470f470e50d7e59caee51574232f41c
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Jul 26 09:15:24 2021 +0200
+
+    Code cleanup showsys.c
+    Adapted calling parameters from void * to specific pointers and removed
+    unnecessary variables.
+
+M	showlinux.h
+M	showsys.c
+
+commit c72143f7b3b3ebca1cd4a921823fd59ff293d524
+Merge: 799d800 ae2c756
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Jul 25 14:39:13 2021 +0200
+
+    Merge branch 'dynamic2'
+
+commit ae2c756721f09d45e2d1034df0072c453321a6ba
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Jul 25 14:28:50 2021 +0200
+
+    Do not use doconvert funtion to validate counter (#160)
+    The doformat function (formerly named 'doconvert') called all
+    sysprt_... functions to determine which fields were relevant and
+    which fields were not relevant during a run of atop. This might
+    lead to buffer overflows since not all variables used were
+    initialized. This issue has been solved now by introducing
+    a separate (optional) validation function per counter.
+
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit 799d800173c4f374031066d1651434784bc5e9a9
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Jun 21 21:52:50 2021 +0200
+
+    New counter for number of NUMA pages migrated
+
+M	deviate.c
+M	man/atop.1
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit 90d7c082728b1e74eb2be657f2836bddbfe2ea94
+Merge: b06b837 b005365
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Jun 21 21:32:35 2021 +0200
+
+    Merge branch 'pizhenwei-vmstat-migrate'
+
+commit b005365f87f03b491105e40dbb701261dfe94a8d
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Jun 21 21:31:18 2021 +0200
+
+    Modify field order and priority of paging counters
+
+M	showlinux.c
+
+commit 94499112dffb455e2989a18f45dbe9f8395bedf2
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon Jun 21 21:25:42 2021 +0200
+
+    Small text modification for migrated counter
+
+M	man/atop.1
+
+commit b06b8375b713aafb9245d1a87a6024e336bca723
+Merge: 87248c3 4b0b717
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jun 19 17:58:33 2021 +0200
+
+    Merge branch 'correctdeviation'
+
+commit 4b0b7174dc85f7b432b1c9a0338d208eca1933d3
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jun 19 17:56:32 2021 +0200
+
+    Avoid non-initialized prestat by introducing extra pointer
+
+M	deviate.c
+
+commit 8f05cf05e20072dd49dc0a2414515d028fdf4cbc
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jun 19 17:39:56 2021 +0200
+
+    Function 'calcdiff' (deviate.c) used uninitialized prestat struct
+
+M	deviate.c
+
+commit 87248c33f95e4aecdfd515356795da640783e8a2
+Merge: a81d5a5 fc405dc
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jun 19 16:29:56 2021 +0200
+
+    Merge pull request #157 from MeinhardZh/nvme-multipath
+    
+    Support NVMe multipath disk statistics
+
+commit a81d5a5f2be2088fe907cf605a650aa1486fab77
+Merge: 8419f02 cf383b0
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jun 19 16:27:42 2021 +0200
+
+    Merge pull request #159 from bytedance/Clean-up-ignored-files
+    
+    Clean up ignored files
+
+commit a070595212f22ff197a6901b9418c57ee0b41de0
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jun 19 16:20:30 2021 +0200
+
+    Reserver space for future counters.
+
+M	photosyst.c
+M	photosyst.h
+
+commit 84d6b2abe404d3746fcf7e6e994512d3676b971d
+Merge: 8419f02 508e51c
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jun 19 10:50:51 2021 +0200
+
+    Merge branch 'vmstat-migrate' of https://github.com/pizhenwei/atop into pizhenwei-vmstat-migrate
+
+commit cf383b011c4b8b6d37cf779133a1f2e8466eadf6
+Author: Fei Li <lifei.shirley@bytedance.com>
+Date:   Wed Jun 9 21:19:46 2021 +0800
+
+    Clean up ignored files
+    
+    Fix #145, and supplement commit e81b1d9c.
+    
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+
+D	atopsar
+
+commit 8419f02f5daad1f0c09b518029780a203df50b36
+Merge: 33072ab 77c87ee
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Jun 3 16:46:44 2021 +0200
+
+    Merge branch 'varsortitem'
+
+commit 77c87ee6fbc8fb2f0c4b640e453405fd76e51999
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Jun 3 16:41:02 2021 +0200
+
+    Variable number of positions for sortitem
+    The sort criterion for the process list is a percentage of
+    CPU, memory, disk, etc utilization of the process concerned.
+    The number of positions for the percentage was fixed 3, considering
+    a maximum of 100% (maximum 999%). However, when a process has 10
+    threads (or more) on a system with 10 CPUs (or more) the CPU utilization
+    of that process can be greater than 999%. Therefore, the number of
+    positions for the percentage depends on the number of CPUs now.
+
+M	showgeneric.c
+M	showgeneric.h
+M	showlinux.c
+M	showprocs.c
+
+commit 33072abd452860d4fa76e3d5ec4b9a0d92bcb284
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Jun 3 15:06:45 2021 +0200
+
+    Adapt man page of atop for state selection (add state 'I').
+
+M	man/atop.1
+
+commit 8d8f9b0ea3e3cd387652f7ab6aef85ad10d1cfa4
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Jun 3 14:53:33 2021 +0200
+
+    Allow thread state 'I' with state selection (key 'Q')
+
+M	showgeneric.c
+
+commit bb38fd80633cf11475fc18191d4cc8bf3f0e67ba
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Jun 3 14:40:17 2021 +0200
+
+    Count idle threads as non-interruptible threads
+    Sofar threads in state 'I' (TASK_IDLE) were not counted on process
+    level (thread categories shown with key 's') and system level (PRC line).
+    Idle threads will now be counted as uninterruptible threads.
+
+M	photoproc.c
+
+commit f1431502fbaf22f22ee6f5a1d0b817eca53dd692
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Jun 3 14:29:24 2021 +0200
+
+    Uninitialized index might cause segmentation fault.
+
+M	showlinux.c
+
+commit fc405dc34f280889eb31820e2e673b6a2f3e03d0
+Author: zhouenhua <zhouenhua@bytedance.com>
+Date:   Wed May 26 17:39:34 2021 +0800
+
+    Support NVMe multipath disk statistics
+    
+    When NVMe disk multi-path is turned on, the kernel only records IO statistics
+    for each multi-path.
+    
+    Ex, read statistics from /proc/diskstatus:
+    0       0 nvme0c0n1 34706049 74843 4815165730 93876201 4187610 1925219 6989322264 47813633 0 45557635 118897696 312571 0 11200562376 857547
+    259     1 nvme0n1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+    
+    For this case, we usually expect the right statistics from nvme0c0n1 instead of nvme0n1.
+    
+    Signed-off-by: enhua zhou zhouenhua@bytedance.com
+
+M	photosyst.c
+
+commit 508e51cd82cffd213feb8294ec58200175533227
+Author: zhenwei pi <pizhenwei@bytedance.com>
+Date:   Tue May 25 09:55:03 2021 +0800
+
+    Support page migration counter
+    
+    The kernel may migrate pages between NUMA nodes to make memory access
+    faster, but during migration the kernel need hold the memory lock of
+    target process and trigger TLB flush. It hurts the performance a lot.
+    
+    Add pgmigrate counter to show/record it for trouble shooting.
+    
+    Signed-off-by: zhenwei pi <pizhenwei@bytedance.com>
+
+M	deviate.c
+M	man/atop.1
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit e3e99949d2a95d3f9a39bfe8fb49354613ee918d
+Author: Fabrice Fontaine <fontaine.fabrice@gmail.com>
+Date:   Mon May 24 21:08:52 2021 +0200
+
+    photosyst.c: fix build on musl
+    
+    Build on musl is broken since version 2.6.0 and
+    https://github.com/Atoptool/atop/commit/e889c66fbe1d0b7ae38fbcbaa46cea749257f486
+    because limits.h is not included:
+    
+    photosyst.c: In function ‘lvmmapname’:
+    photosyst.c:1624:14: error: ‘PATH_MAX’ undeclared (first use in this function); did you mean ‘AF_MAX’?
+       char  path[PATH_MAX];
+                  ^~~~~~~~
+                  AF_MAX
+    
+    Signed-off-by: Fabrice Fontaine <fontaine.fabrice@gmail.com>
+
+M	photosyst.c
+
+commit b004daf963939c925dd775fca9f3cebff7381bd1
+Merge: feb220c a4503da
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon May 24 12:15:06 2021 +0200
+
+    Merge branch 'ffontaine-master'
+
+commit a4503da46769329318ee3483ae818d8ff4bf5de7
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon May 24 12:12:48 2021 +0200
+
+    Use of struct ethtool_link_settings should be conditional
+
+M	ifprop.c
+
+commit 1d28e46c2f6d1ca856303d1252f24ad0e5db833e
+Merge: feb220c aff473e
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Mon May 24 11:06:46 2021 +0200
+
+    Merge branch 'master' of https://github.com/ffontaine/atop into ffontaine-master
+
+commit feb220c77f16030428a28e0365633fde2d34219d
+Merge: 69adbd1 918868e
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat May 8 14:29:51 2021 +0200
+
+    Merge branch 'yk144-average-per-second-rounding'
+
+commit 918868e49948df6c7f2ce7ee3fe86e4b23eee2b5
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat May 8 14:28:45 2021 +0200
+
+    Cosmetic change (source code layout)
+
+M	atop.h
+
+commit 8b0f03e55f9fe555ed9a6e64e8e2c6bc9c113c36
+Merge: 69adbd1 5c9c88a
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat May 8 14:09:00 2021 +0200
+
+    Merge branch 'average-per-second-rounding' of https://github.com/yk144/atop into yk144-average-per-second-rounding
+
+commit 69adbd109a8111daba53bbaa8680677d3f65fa86
+Merge: 48df66d d66ff0e
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat May 8 13:57:39 2021 +0200
+
+    Merge branch 'natoscott-state-filter'
+
+commit d66ff0e48fb6ec90ab84f786c4016fda7cd0644b
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat May 8 13:56:35 2021 +0200
+
+    Various bug fixes and in general add 'thread' to all messages
+
+M	man/atop.1
+M	showgeneric.c
+
+commit 441e6f72e7c59974dbd036230afa70523e3c3cde
+Merge: 48df66d 44ea948
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat May 8 13:11:30 2021 +0200
+
+    Merge branch 'state-filter' of https://github.com/natoscott/atop into natoscott-state-filter
+
+commit 48df66d570e640c683a2239016b0fd3ecbd41821
+Merge: fed5bd5 0aa920e
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Apr 25 15:06:43 2021 +0200
+
+    Merge branch 'bytedance-fix-initifprop'
+
+commit 0aa920ea2b130e0cfae9c38817e88549cfc6c4fc
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Apr 25 15:06:14 2021 +0200
+
+    Properly define if interface is virtual or physical
+
+M	ifprop.c
+
+commit cafda7ac55e60996bba6d376f6e977821ca40982
+Merge: fed5bd5 ef183ff
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Apr 25 14:45:23 2021 +0200
+
+    Merge branch 'fix-initifprop' of https://github.com/bytedance/atop into bytedance-fix-initifprop
+
+commit fed5bd53a291483c4d2e56ea9cf53b62e8eea5af
+Merge: d2ca9f2 95412fa
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Apr 25 14:38:14 2021 +0200
+
+    Merge pull request #150 from natoscott/deprecated-function
+    
+    Switch to using curses vw_printw as vwprintw is deprecated
+
+commit d2ca9f2954a25b4955c661bb892817988fd03b2e
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Apr 25 14:21:38 2021 +0200
+
+    Add license info to various include files (solves issue #144)
+
+M	atopacctd.h
+M	gpucom.h
+M	ifprop.h
+M	netatop.h
+M	netatopd.h
+M	netstats.h
+M	parseable.h
+M	rawlog.h
+
+commit 961a6ce137eedc722a27b6002f1ffb3c6ba86842
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sun Apr 25 13:23:24 2021 +0200
+
+    HTTP statistics modified from -h flag to -o flag (solves issue #152)
+    The -h flag was used for the HTTP stats and Infiniband stats. For HTTP
+    statistics (by default not activated) the -o flag can be used now.
+
+M	atopsar.c
+M	photosyst.c
+
+commit db9eef1d4a3d9414ed00f6c0da0e5dad55f2b9af
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Apr 22 08:24:29 2021 +0200
+
+    Possible buffer overflow with huge number of seconds
+    Number of seconds will be limited to 5 positions.
+
+M	showsys.c
+
+commit aa85ccbe1ed475b1be010ba254bf327a0c12a725
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Thu Apr 22 08:07:06 2021 +0200
+
+    Possible buffer overflow with average disk I/O
+    The rounding algorithm has been improved and the buffer has been enlarged.
+
+M	showsys.c
+
+commit 44ea948e94f665b5b0c1459b7323759f8944aaf8
+Author: Nathan Scott <nathans@redhat.com>
+Date:   Mon Mar 22 16:42:45 2021 +1100
+
+    Allow process selection based on specific process states.
+
+M	man/atop.1
+M	showgeneric.c
+M	showgeneric.h
+
+commit 9cb119713b5e6be43671fe1856fb4bd49ff91fa7
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Tue Mar 23 16:50:48 2021 +0100
+
+    Correct definition of environment variable LOGOPTS
+    The former definition of the empty environment variable LOGOPTS
+    in the atop.service file (Environment=LOGOPTS="") causes an
+    empty command line parameter for atop running in the background.
+    This empty parameter results in an interval timer definition of 0 seconds
+    which means that atop only writes one single sample to the daily logfile
+    and after that no more!
+    When the environment variable is overruled by the definition LOGOPTS=""
+    (or another value) in the file /etc/default/atop the problem is bypassed.
+
+M	atop.service
+
+commit 95412fa4a3eac31e759fbec1030c6ba233514ccb
+Author: Nathan Scott <nathans@redhat.com>
+Date:   Fri Mar 12 10:45:52 2021 +1100
+
+    Switch to using curses vw_printw as vwprintw is deprecated
+    
+    Resolves the following compiler warning -
+    
+    showgeneric.c: In function ‘printg’:
+    showgeneric.c:2724:3: warning: ‘vwprintw’ is deprecated [-Wdeprecated-declarations]
+
+M	showgeneric.c
+
+commit 5c580bee1fbfa32fef5558cb3beadb5583952c98
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Mar 6 12:10:15 2021 +0100
+
+    Support multiple counters 'allocstall_' in /proc/vmstat.
+
+M	photosyst.c
+
+commit 12984d6defae1643ed8683f8a09cbf4997bd0949
+Merge: dc6856a e4e82b4
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Mar 6 11:51:47 2021 +0100
+
+    Merge branch 'bytedance-add-compact_stall'
+
+commit e4e82b4827f49ebf3d4b68128d2cb1231e91b333
+Merge: dc6856a d0ae258
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Mar 6 11:46:31 2021 +0100
+
+    Merge branch 'add-compact_stall' of https://github.com/bytedance/atop into bytedance-add-compact_stall
+
+commit dc6856a1f53be7a322f585ac30690239d0416e25
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Feb 20 11:07:20 2021 +0100
+
+    Avoid integer overflow when calculating PSI percentages.
+
+M	showsys.c
+
+commit 67eadc5b2aa22d562480c5b197f58f259eb46f66
+Merge: e81b1d9 09935eb
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Feb 20 10:57:43 2021 +0100
+
+    Merge branch 'dynamic'
+
+commit 09935eb6e35cc7408a29e11c5026b67378edfa3e
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Feb 20 10:49:44 2021 +0100
+
+    Suppress irrelevant counters (solves issue #148)
+    In the output of atop, counters will be suppressed when they do not
+    contain a relevant value to avoid unnecessary column space to be used.
+    A counter does not contain a relevant value when it is not supported
+    by the kernel in use, when it relates to a kernel mechanism that is not
+    in use on this machine or when the user running atop does not have
+    enough privileges to read specific counters.
+    To make the user aware that certain counters are missing due to a lack
+    of privileges, a message is shown during the first sample.
+
+M	atop.h
+M	deviate.c
+M	man/atop.1
+M	man/atopsar.1
+M	parseable.c
+M	photosyst.c
+M	showgeneric.c
+M	showlinux.c
+M	showsys.c
+
+commit fa9e907d4174df94935606bb9e84dd38bda87f8c
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Feb 20 10:42:17 2021 +0100
+
+    Add the number of OOM kills to the -s report.
+    The number of OOM kills are shown as an additional column in the
+    'atopsar -s' report. In contradiction to the other frequency columns
+    the OOM kills are not shown as a per-second value because a single
+    OOM kill during a longer interval might result in 0.00 kills/sec
+    in that case.
+
+M	atopsar.c
+
+commit d0ae2589d1ff48ce796b76867c0f96cd63ce7cbf
+Author: Fei Li <lifei.shirley@bytedance.com>
+Date:   Sun Mar 8 11:37:34 2020 +0800
+
+    Record the number of process stalls to run memory compaction
+    
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+
+M	deviate.c
+M	man/atop.1
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	prev/photosyst_20.h
+M	prev/photosyst_21.h
+M	prev/photosyst_22.h
+M	prev/photosyst_23.h
+M	prev/photosyst_24.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit e81b1d9cb405482b6706aeea774b2ad8fe6718ff
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jan 30 12:34:14 2021 +0100
+
+    Make clean removes atopsar now (issue 145)
+
+M	Makefile
+
+commit 9decbba5980249129a0cb5ba3b186d07e3590c57
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jan 30 12:29:54 2021 +0100
+
+    Add counter for the number of OOM kills to the PAG line
+
+M	deviate.c
+M	man/atop.1
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit f62fdc8429a7f170415f4bf58befee9d06ff6c0b
+Merge: 462cc2b c0623c0
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jan 30 12:10:24 2021 +0100
+
+    Merge branch 'ksmzswap'
+
+commit c0623c070733953d46e4783ffd35f65714602efb
+Author: Gerlof Langeveld <gerlof.langeveld@atoptool.nl>
+Date:   Sat Jan 30 12:07:58 2021 +0100
+
+    Add counters for zswap and KSM.
+    For zswap the counters stored_pages and pool_total_size are added.
+    For KSM the counters pages_shared and pages_sharing are added.
+
+M	deviate.c
+M	man/atop.1
+M	parseable.c
+M	photosyst.c
+M	photosyst.h
+M	showlinux.c
+M	showlinux.h
+M	showsys.c
+
+commit aff473ee28903775e1bb35793b9c4c50ee0c7270
+Author: Fabrice Fontaine <fontaine.fabrice@gmail.com>
+Date:   Tue Dec 22 12:23:33 2020 +0100
+
+    ifprop.c: fix build with kernel < 4.6
+    
+    Build fails with kernel headers < 4.6 since version 2.6.0 and
+    https://github.com/Atoptool/atop/commit/08c622ecaa5bb0bb260984ceaddc4730d1b312a7
+    
+    Indeed, ethtool_link_settings and ETHTOOL_GLINKSETTINGS are only
+    available since
+    https://github.com/torvalds/linux/commit/3f1ac7a700d039c61d8d8b99f28d605d489a60cf
+    
+    Signed-off-by: Fabrice Fontaine <fontaine.fabrice@gmail.com>
+
+M	ifprop.c
+
+commit ef183ffd59fdfd108f6d2f65ea9153c4a032d6d6
+Author: Fei Li <lifei.shirley@bytedance.com>
+Date:   Tue Apr 21 10:40:21 2020 +0800
+
+    Fix initifprop() when obtaining properties of all interfaces
+    
+    This patch fixes two issues:
+    - Correctly set link_mode_masks_nwords when using
+      ETHTOOL_GLINKSETTINGS to query devices, or else we can only obtain
+      base fields from kernel function: ethtool_get_link_ksettings()
+      without any link_settings filed is stored.
+    - Considering not all net drivers realize the "phy_address" field in
+      kernel, to determine whether or not a network interface is virtual,
+      let's read /sys/devices/virtual/net/xxx to obtain all virtual
+      interfaces' name, and then do compare with each ifprops[i].name to
+      filter it.
+    
+    Fixes: 08c622ecaa5bb0bb260984ceaddc4730d1b312a7
+    Signed-off-by: Fei Li <lifei.shirley@bytedance.com>
+
+M	ifprop.c
+
+commit 5c9c88ad15a863a2194abf1b3b8ce44f832df4d9
+Author: Yaroslav K <message2yk@gmail.com>
+Date:   Fri Jun 14 16:31:57 2019 +0300
+
+    Fixed rounding problems in the average-per-second mode.
+    
+    problem example:
+    WRDSK,RDDSK sometimes displayed as 0.0G/s 0.0M/s in the average-per-second mode.
+    
+    solution:
+    - more accurate rounding (llround) when calculating values for the 1/s intervals, and while converting to KB MB GB ..
+    - values<=9 are displayed as before as float ex.:1.1M/s,3.3G/s
+    - values 10-999 are display as int (llround) ex.:123M/s 999M/s
+
+M	atop.h
+M	showprocs.c
+M	various.c
